@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core'
 import { Routes } from '@angular/router'
 import { NativeScriptRouterModule } from '@nativescript/angular'
 
+import { AuthenticationGuard } from './common/authentication.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
@@ -10,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('~/app/home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('~/app/home/home.module').then((m) => m.HomeModule), 
+    canActivate: [AuthenticationGuard]
   },
   {
     path: 'news-single',

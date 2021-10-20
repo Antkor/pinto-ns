@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application } from '@nativescript/core'
+import * as AppSettings from '@nativescript/core/application-settings';
 
 @Component({
   selector: 'Home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // Init your component properties here.
+    AppSettings.setString('user', 'antonis');
   }
 
   onDrawerButtonTap(): void {

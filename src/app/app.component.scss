@@ -1,3 +1,13 @@
 .nt-drawer__header-image {
     margin-top: 20;
 }
+
+.nt-drawer__list-item {
+    &.-selected {
+        background-color: #fff;
+        
+        Label {
+            color: #75C8CC !important;
+        }
+    }
+}
