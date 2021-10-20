@@ -11,6 +11,7 @@ import { Application } from '@nativescript/core'
 
 @Component({
   selector: 'ns-app',
+  styleUrls: ['app.component.scss'],
   templateUrl: 'app.component.html',
 })
 export class AppComponent implements OnInit {
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
   private _sideDrawerTransition: DrawerTransitionBase
 
   constructor(private router: Router, private routerExtensions: RouterExtensions) {
-    // Use the component constructor to inject services.
+
   }
 
   ngOnInit(): void {
@@ -47,5 +48,6 @@ export class AppComponent implements OnInit {
 
     const sideDrawer = <RadSideDrawer>Application.getRootView()
     sideDrawer.closeDrawer()
+    sideDrawer.gesturesEnabled = false;
   }
 }

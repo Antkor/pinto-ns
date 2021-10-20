@@ -39,5 +39,24 @@
 
 // Drawer navigation custom styles
 .nt-drawer__header-image {
-  color: const(grey);
+  background: #ffffff;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.nt-drawer__header {
+  background: #ffffff;
+}
+
+.nt-drawer__list-item {
+  font-size: 18;
+}
+
+* {
+  font-family: 'YanoneKaffeesatz';
+  font-size: 20;
+}
+
+.action-bar-title {
+  font-size: 20;
 }

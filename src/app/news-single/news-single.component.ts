@@ -3,11 +3,11 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application } from '@nativescript/core'
 
 @Component({
-  selector: 'Home',
-  styleUrls: ['home.component.scss'],
-  templateUrl: './home.component.html',
+  selector: 'NewsSingle',
+  styleUrls: ['news-single.component.scss'],
+  templateUrl: './news-single.component.html',
 })
-export class HomeComponent implements OnInit {
+export class NewsSingleComponent implements OnInit {
   constructor() {
     // Use the component constructor to inject providers.
   }
