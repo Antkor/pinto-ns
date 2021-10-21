@@ -1,4 +1,23 @@
-.page__content {
-    font-family: 'YanoneKaffeesatz';
+.username {
+    font-size: 22;
+}
+
+.pintos-label {
+    font-size: 26;
+    color: #75C8CC;
+    margin-bottom: 40;
+    font-weight: bold;
+}
+
+.pintos {
+    font-size: 90;
+    border-width: 6;
+    border-color: #DF9882;
+    color: #DF9882;
+    padding: 0 40;
+    margin-bottom: 40;
+}
+
+.qr-label {
     font-size: 20;
 }

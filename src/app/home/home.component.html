@@ -19,6 +19,9 @@
   alignItems="center"
   justifyContent="center"
 >
-  <Label class="page__content" text="Homepage"></Label>
+  <Label class="username" text="Hello Antonis!"></Label>
+  <Label class="pintos-label" text="Your pintos are:"></Label>
+  <Label class="pintos" text="8"></Label>
+  <Label class="qr-label" text="Scan to use or add more pintos"></Label>
   <Image width="200" height="200" (loaded)="generateQrCode($event)"></Image>
 </FlexboxLayout>
