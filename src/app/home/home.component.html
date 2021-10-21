@@ -3,12 +3,22 @@
   <GridLayout columns="50, *">
     <Label class="action-bar-title" text="My Pintos" colSpan="2"></Label>
 
-    <Label class="fas" text="&#xf0c9;" fontSize="18" (tap)="onDrawerButtonTap()"></Label>
+    <Label
+      color="#fff"
+      class="fas"
+      text="&#xf0c9;"
+      fontSize="18"
+      (tap)="onDrawerButtonTap()"
+    ></Label>
   </GridLayout>
 </ActionBar>
 
-<FlexboxLayout class="page__content"
-alignItems="center"
-justifyContent="center">
+<FlexboxLayout
+  class="page__content"
+  flexDirection="column"
+  alignItems="center"
+  justifyContent="center"
+>
   <Label class="page__content" text="Homepage"></Label>
+  <Image width="200" height="200" (loaded)="generateQrCode($event)"></Image>
 </FlexboxLayout>
