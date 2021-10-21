@@ -2,3 +2,48 @@
     font-family: 'YanoneKaffeesatz';
     font-size: 20;
 }
+
+.login-image {
+    margin-bottom: 40;
+
+}
+
+.input-container {
+    width: 80%;
+}
+
+.login-input {
+    width: 80%;
+    margin-bottom: 20;
+    border-color: #75C8CC;
+    border-width: 2;
+    padding: 10 5;    
+}
+
+%buttons {
+    font-size: 20;
+    flex: 1;
+    height: 40;
+    margin: 0;
+}
+
+.main-button {
+    @extend %buttons;
+    background-color: #75C8CC;
+    color: #fff;
+    border-color: #75C8CC;
+    border-width: 2;
+    margin-right: 5
+}
+
+.secondary-button {
+    @extend %buttons;
+    border-color: #75C8CC;
+    border-width: 2;
+    color: #75C8CC;
+}
+
+.forgot-password {
+    margin-top: 10;
+    color: #DF9882;
+}

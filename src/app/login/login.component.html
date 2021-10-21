@@ -5,7 +5,48 @@
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-placeholder" text="Login Page"></Label>
-  <Button text="Login" (tap)="login()"></Button>
-</GridLayout>
+<FlexboxLayout
+  flexDirection="column"
+  alignItems="center"
+  justifyContent="center"
+  class="page__content"
+>
+  <Image
+    width="160"
+    borderRadius="0"
+    class="login-image"
+    src="~/assets/logo-hq.png"
+  ></Image>
+  <FlexboxLayout
+    class="input-container"
+    alignItems="center"
+    justifyContent="flex-start"
+  >
+    <Label text="@ Email"></Label>
+  </FlexboxLayout>
+  <TextField class="login-input"></TextField>
+  <FlexboxLayout
+    class="input-container"
+    alignItems="center"
+    justifyContent="flex-start"
+  >
+    <Label
+      col="0"
+      text="&#xf023;"
+      class="nt-icon fas"
+      fontSize="18"
+      marginRight="5"
+    ></Label>
+    <Label text="Password"></Label>
+  </FlexboxLayout>
+  <TextField class="login-input"></TextField>
+  <FlexboxLayout
+    class="input-container"
+    alignItems="center"
+    justifyContent="center"
+  >
+    <Button class="main-button" text="Login" (tap)="login()"></Button>
+    <Button class="secondary-button" text="Register" (tap)="login()"></Button>
+  </FlexboxLayout>
+  <Label class="forgot-password" text="Forgot your password?"></Label>
+</FlexboxLayout>
