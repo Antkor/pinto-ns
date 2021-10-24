@@ -14,9 +14,7 @@ export class AuthenticationGuard implements CanActivate {
 
   public canActivate(): boolean {
     const user = AppSettings.getString('user');
-    console.log(user);
-    console.log(user);
-
+    
     if (user && user.length) {
       return true;
     } else {

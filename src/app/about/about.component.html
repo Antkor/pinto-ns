@@ -3,12 +3,29 @@
   <GridLayout columns="50, *">
     <Label class="action-bar-title" text="About" colSpan="2"></Label>
 
-    <Label color="#fff" class="fas" text="&#xf0c9;" fontSize="18" (tap)="onDrawerButtonTap()"></Label>
+    <Label
+      color="#fff"
+      class="fas"
+      text="&#xf0c9;"
+      fontSize="18"
+      (tap)="onDrawerButtonTap()"
+    ></Label>
   </GridLayout>
 </ActionBar>
 
-<FlexboxLayout class="page__content"
-alignItems="center"
-justifyContent="center">
-  <Label class="page__content" text="About Page"></Label>
+<FlexboxLayout
+  class="page__content"
+  alignItems="center"
+  justifyContent="center"
+>
+  <Label
+    class="about-text"
+    textWrap="true"
+    text="Η εφαρμογή Pinto αναπτύχθηκε από τον Κοροσίδη Αντώνη για τις ανάγκες
+της διπλωματικής του εργασίας με τίτλο Συγκριτικη αναλυση δημοφιλων
+framework αναπτυξης εφαρμογων για φορητες συσκευες με χρηση τεχνολογιων
+web στο ΠΜΣ Εφαρμοσμένης Πληροφορικής στο Πανεπιστήμιο Μακεδονίας."
+    fontSize="18"
+    (tap)="onDrawerButtonTap()"
+  ></Label>
 </FlexboxLayout>

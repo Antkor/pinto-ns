@@ -14,6 +14,7 @@
     "@angular/router": "^12.2.0",
     "@nativescript/angular": "^12.2.0",
     "@nativescript/core": "~8.1.1",
+    "@nativescript/geolocation": "^7.2.2",
     "@nativescript/theme": "~3.0.1",
     "nativescript-qr-generator": "^2.0.0",
     "nativescript-ui-sidedrawer": "~10.0.1",

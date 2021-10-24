@@ -3,12 +3,43 @@
   <GridLayout columns="50, *">
     <Label class="action-bar-title" text="Stores" colSpan="2"></Label>
 
-    <Label color="#fff" class="fas" text="&#xf0c9;" fontSize="18" (tap)="onDrawerButtonTap()"></Label>
+    <Label
+      color="#fff"
+      class="fas"
+      text="&#xf0c9;"
+      fontSize="18"
+      (tap)="onDrawerButtonTap()"
+    ></Label>
   </GridLayout>
 </ActionBar>
 
-<FlexboxLayout class="page__content"
-alignItems="center"
-justifyContent="center">
-  <Label class="page__content" text="Stores Page"></Label>
-</FlexboxLayout>
+<GridLayout rows="*">
+  <ListView [items]="stores">
+    <ng-template let-store="item">
+      <!-- Nativescript needs that StackLayout in order to add margin since margin does not apply 
+        to the first child of the ListView template -->
+      <StackLayout> 
+      <GridLayout columns="120, *" rows="*" class="card-container">
+        <Image src="~/assets/logo-hq.png" col="0" class="store-image"></Image>
+        <FlexboxLayout flexDirection="column" col="1">
+          <Label class="name" [text]="store.name"></Label>
+          <Label class="address" [text]="store.address"></Label>
+          <Label class="distance" [text]="store.distance + 'km'"></Label>
+          <GridLayout columns="*, 10, *" rows="40">
+            <Button class="store-button" col="0">
+              <FormattedString>
+                <Span class="fas " text="&#xf14e;"></Span>   
+                <Span text="  Directions" ></Span>    
+            </FormattedString>
+            </Button>
+            <Button class="store-button" col="2">
+              <Span class="fas" text="&#xf095;"></Span>   
+              <Span text="  Call"></Span>    
+            </Button>
+          </GridLayout>
+        </FlexboxLayout>
+      </GridLayout>
+    </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
