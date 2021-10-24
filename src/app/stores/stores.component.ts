@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { Application } from "@nativescript/core";
+import * as TNSPhone from 'nativescript-phone';
 
 import { storeData } from "../common/data/storeData";
 import { getUserLocation, applyHaversine } from "../common/utils";
@@ -37,5 +38,9 @@ export class StoresComponent implements OnInit {
   onDrawerButtonTap(): void {
     const sideDrawer = <RadSideDrawer>Application.getRootView();
     sideDrawer.showDrawer();
+  }
+
+  makeCall(number) {
+    TNSPhone.dial(number, true);
   }
 }
