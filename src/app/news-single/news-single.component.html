@@ -3,12 +3,12 @@
   <GridLayout columns="50, *">
     <Label class="action-bar-title" text="My Pintos" colSpan="2"></Label>
 
-    <Label color="#fff" class="fas" text="&#xf0c9;" fontSize="18" (tap)="onDrawerButtonTap()"></Label>
+    <Label color="#fff" class="fas" text="&#xf060;" fontSize="18" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<FlexboxLayout class="page__content"
-alignItems="center"
-justifyContent="center">
-  <Label class="page__content" text="News Single Page"></Label>
-</FlexboxLayout>
+<StackLayout>
+  <Image src="~/assets/logo-hq.png" class="news-image"></Image>
+  <Label [text]="newsItem.title" class="title"></Label>
+  <Label [text]="newsItem.text" textWrap="true" class="text"></Label>
+</StackLayout>

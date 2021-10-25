@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application } from '@nativescript/core'
-import * as AppSettings from '@nativescript/core/application-settings';
+import { newsData } from "../common/data/newsData";
+import { RouterExtensions } from '@nativescript/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'News',
@@ -9,7 +11,9 @@ import * as AppSettings from '@nativescript/core/application-settings';
   templateUrl: './news.component.html',
 })
 export class NewsComponent implements OnInit {
-  constructor() {
+  public news = newsData;
+
+  constructor(private router: Router, private routerExtensions: RouterExtensions) {
     // Use the component constructor to inject providers.
   }
 
@@ -20,5 +24,18 @@ export class NewsComponent implements OnInit {
   onDrawerButtonTap(): void {
     const sideDrawer = <RadSideDrawer>Application.getRootView()
     sideDrawer.showDrawer()
+  }
+
+  navigateToSingle(newsItem) {
+    this.routerExtensions.navigate(['/news-single'], {
+        state: {
+          title: newsItem.title,
+          text: newsItem.text,
+      }
+    });
+  }
+
+  getItemText(text) {
+    return text.substring(0, 140) + '...';
   }
 }

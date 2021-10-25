@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application } from '@nativescript/core'
+import { RouterExtensions } from '@nativescript/angular'
 
 @Component({
   selector: 'NewsSingle',
@@ -8,8 +9,10 @@ import { Application } from '@nativescript/core'
   templateUrl: './news-single.component.html',
 })
 export class NewsSingleComponent implements OnInit {
-  constructor() {
-    // Use the component constructor to inject providers.
+  public newsItem;
+
+  constructor(private router: RouterExtensions) {
+    this.newsItem = this.router.router.getCurrentNavigation().extras.state;
   }
 
   ngOnInit(): void {
@@ -17,7 +20,6 @@ export class NewsSingleComponent implements OnInit {
   }
 
   onDrawerButtonTap(): void {
-    const sideDrawer = <RadSideDrawer>Application.getRootView()
-    sideDrawer.showDrawer()
+    this.router.back();
   }
 }

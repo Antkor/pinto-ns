@@ -1,4 +1,26 @@
-.page__content {
-    font-family: 'YanoneKaffeesatz';
-    font-size: 20;
+ListView {
+    separator-color: transparent;
+}
+
+.card-container {
+    padding: 10 20;
+    margin-bottom: 5;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px 0px;
+
+    .news-image {
+        margin-right: 20;
+    }
+
+    .title, .text {
+        padding: 0 0 5 0;
+    }
+
+    .title {
+        color: #DF9882;
+        font-size: 22;
+    }
+
+    .text {
+        font-size: 20;
+    }
 }

@@ -7,8 +7,20 @@
   </GridLayout>
 </ActionBar>
 
-<FlexboxLayout class="page__content"
-alignItems="center"
-justifyContent="center">
-  <Label class="page__content" text="News Page"></Label>
-</FlexboxLayout>
+<GridLayout rows="*">
+  <ListView [items]="news">
+    <ng-template let-newsItem="item">
+      <!-- Nativescript needs that StackLayout in order to add margin since margin does not apply 
+        to the first child of the ListView template -->
+      <StackLayout> 
+      <GridLayout columns="120, *" rows="*" class="card-container" (tap)="navigateToSingle(newsItem)">
+        <Image src="~/assets/logo-hq.png" col="0" class="news-image"></Image>
+        <FlexboxLayout flexDirection="column" col="1">
+          <Label class="title" [text]="newsItem.title"></Label>
+          <Label class="text" textWrap="true" [text]="getItemText(newsItem.text)"></Label>
+        </FlexboxLayout>
+      </GridLayout>
+    </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
